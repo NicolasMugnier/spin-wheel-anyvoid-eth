@@ -20,7 +20,7 @@ function App(): JSX.Element {
   };
 
   const removeLabel = (index: number): void => {
-    setLabels(labels.filter((_, i) => i !== index));
+    setLabels(labels.filter((_, i: number): boolean => i !== index));
   };
 
   const spinWheel = (): void => {
@@ -64,9 +64,8 @@ function App(): JSX.Element {
             onStopSpinning={() => {
               setSpinning(false);
               setSelectedLabel(labels[prizeNumber].option);
-              setLabels(labels.filter((_, i) => i !== prizeNumber));
               setShowConfetti(true);
-              setTimeout(() => {setShowConfetti(false); setSelectedLabel(null);}, 5000);
+              setTimeout(() => {setShowConfetti(false);}, 5000);
             }}
             backgroundColors={["#f9c74f", "#f94144", "#43aa8b", "#577590"]}
             textColors={["#fff"]}
