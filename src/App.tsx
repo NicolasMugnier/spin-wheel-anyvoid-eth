@@ -24,32 +24,39 @@ function App(): JSX.Element {
   };
 
   const spinWheel = (): void => {
+    setSelectedLabel(null);
+    setShowConfetti(false);
     if (labels.length === 0 || spinning) return;
     setSpinning(true);
     const selectedIndex = Math.floor(Math.random() * labels.length);
     setPrizeNumber(selectedIndex);
   };
 
+  const emojis: string[] = ["🎉", "🎊", "🏆", "🥳", "👏", "🔥"];
+
   return (
     <div className="container">
-      {showConfetti && <Confetti 
-                          gravity={0.1}
-                          wind={0}
-                        />
+      {showConfetti && 
+          <Confetti 
+            gravity={0.1}
+            wind={0}
+          />
       }
       <h1>Spin the Wheel</h1>
+      {selectedLabel && <h2>Winner: {selectedLabel} {emojis[Math.floor(Math.random() * emojis.length)]}</h2>}
+      <button onClick={spinWheel} disabled={labels.length === 0 || spinning}>
+        Spin Wheel
+      </button><br/>
       <input 
         type="text" 
         value={newLabel} 
         onChange={(e) => setNewLabel(e.target.value)} 
         placeholder="Enter name"
+        disabled={spinning}
       />
-      <button onClick={addLabel}>Add Participant</button>
-      <button onClick={spinWheel} disabled={labels.length === 0 || spinning}>
-        Spin Wheel
-      </button>
-      <div className="wheel-container">
+      <button onClick={addLabel} disabled={spinning}>Add Participant</button>
         {labels.length > 0 ? (
+          <div className="wheel-container">
           <Wheel 
             mustStartSpinning={spinning}
             prizeNumber={prizeNumber}
@@ -59,21 +66,24 @@ function App(): JSX.Element {
               setSelectedLabel(labels[prizeNumber].option);
               setLabels(labels.filter((_, i) => i !== prizeNumber));
               setShowConfetti(true);
-              setTimeout(() => setShowConfetti(false), 5000);
+              setTimeout(() => {setShowConfetti(false); setSelectedLabel(null);}, 5000);
             }}
             backgroundColors={["#f9c74f", "#f94144", "#43aa8b", "#577590"]}
             textColors={["#fff"]}
+            spinDuration={1.0}
+            innerRadius={0}
+            outerBorderWidth={2}
+            radiusLineWidth={2}
           />
+          </div>
         ) : (
           <p>No participants available</p>
         )}
-      </div>
-      {selectedLabel && <h2>Winner: {selectedLabel}</h2>}
       <ul>
         {labels.map((label, index) => (
           <li key={index} style={{ backgroundColor: label.style.backgroundColor }}>
             {label.option}
-            <button onClick={() => removeLabel(index)}>Remove</button>
+            <button disabled={spinning} onClick={() => removeLabel(index)}>Remove</button>
           </li>
         ))}
       </ul>
