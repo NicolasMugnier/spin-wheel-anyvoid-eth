@@ -43,7 +43,7 @@ function App(): JSX.Element {
           />
       }
       <h1>Spin the Wheel</h1>
-      {selectedLabel && <h2>Winner: {selectedLabel} {emojis[Math.floor(Math.random() * emojis.length)]}</h2>}
+      {selectedLabel && <h2>Congratulations {selectedLabel} {emojis[Math.floor(Math.random() * emojis.length)]}</h2>}
       <button onClick={spinWheel} disabled={labels.length === 0 || spinning}>
         Spin Wheel
       </button><br/>
@@ -86,6 +86,9 @@ function App(): JSX.Element {
           </li>
         ))}
       </ul>
+      <footer className="footer">
+        <p>&copy; 2025 - anyvoid.eth - See on <a href="https://github.com/NicolasMugnier/spin-wheel-anyvoid-eth">GitHub</a></p>
+      </footer>
     </div>
   );
 }
