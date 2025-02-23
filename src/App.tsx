@@ -87,7 +87,7 @@ function App(): JSX.Element {
         ))}
       </ul>
       <footer className="footer">
-        <p>&copy; 2025 - anyvoid.eth - See on <a href="https://github.com/NicolasMugnier/spin-wheel-anyvoid-eth">GitHub</a></p>
+        <p>&copy; 2025 - anyvoid.eth - View on <a href="https://github.com/NicolasMugnier/spin-wheel-anyvoid-eth">GitHub</a></p>
       </footer>
     </div>
   );
