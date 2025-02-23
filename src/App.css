@@ -4,12 +4,19 @@ html, body {
   justify-content: center;
   align-items: center;
   background-color: #242424;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
 }
 .container {
   text-align: center;
   font-family: Arial, sans-serif;
   margin: auto auto;
   height:100%;
+}
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
 }
 input {
   padding: 8px;
@@ -26,10 +33,19 @@ button {
   border: none;
   cursor: pointer;
   border-radius: 5px;
+  border: 1px solid transparent;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  transition: border-color 0.25s;
 }
 button:disabled {
   background-color: gray;
   cursor: not-allowed;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
 }
 .wheel-container {
   width: 80vw;
@@ -50,4 +66,12 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+a {
+  font-weight: 500;
+  color: #ffffff;
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: none;
 }
