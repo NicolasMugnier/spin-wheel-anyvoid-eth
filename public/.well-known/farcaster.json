@@ -1,0 +1,17 @@
+{
+    "accountAssociation": {
+        "header": "eyJmaWQiOjkwODUxNCwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweEVlODZjMDBFYmU1Njk1NGMxMDJlQTIwNzQ1NjZhZGEwQzIzNTU2RmIifQ",
+        "payload": "eyJkb21haW4iOiJzcGluLXdoZWVsLmFueXZvaWQueHl6In0",
+        "signature": "MHgxYjZjNmYwNjM4Y2JlNjU1ZTcwZTU3MTZkNTc2M2UzMDVmMjg1ZTIzZWY3NmY2Mjc0MWE2NTg4MWYxOGU1M2EyNDZhZDNjYmYxZTc3YmYxMDIxNmJmMmQ2MjUzZGExMDVmNTk0YTU0NTc0NjU5ZjRiYTgwNmJjY2JhYWJiY2ZiMjFj"
+    },
+    "frame": {
+      "version": "1",
+      "name": "Spin the Wheel",
+      "iconUrl": "https://spin-wheel.anyvoid.xyz/main.png",
+      "homeUrl": "https://spin-wheel.anyvoid.xyz",
+      "imageUrl": "https://spin-wheel.anyvoid.xyz/main.png",
+      "buttonTitle": "Spin the Wheel",
+      "splashImageUrl": "https://spin-wheel.anyvoid.xyz/splash.png",
+      "splashBackgroundColor": "#eeccff"
+    }
+  }
