@@ -13,8 +13,9 @@ function App(): JSX.Element {
 
   const addLabel = (): void => {
     if (newLabel.trim() !== "") {
-      const color = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-      setLabels([...labels, { option: newLabel, style: { backgroundColor: color } }]);
+      const color: string = Math.floor(Math.random() * 16777215).toString(16);
+      const backgroundColor: string = `#${color.padEnd(6, '0')}`;
+      setLabels([...labels, { option: newLabel, style: { backgroundColor: backgroundColor } }]);
       setNewLabel("");
     }
   };
@@ -37,10 +38,12 @@ function App(): JSX.Element {
   return (
     <div className="container">
       {showConfetti && 
+      <div className="confetti">
           <Confetti 
             gravity={0.1}
             wind={0}
           />
+          </div>
       }
       <h1>Spin the Wheel</h1>
       {selectedLabel && <h2>Congratulations {selectedLabel} {emojis[Math.floor(Math.random() * emojis.length)]}</h2>}
