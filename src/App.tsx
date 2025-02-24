@@ -38,12 +38,12 @@ function App(): JSX.Element {
   return (
     <div className="container">
       {showConfetti && 
-      <div className="confetti">
+        <div className="confetti">
           <Confetti 
             gravity={0.1}
             wind={0}
           />
-          </div>
+        </div>
       }
       <h1>Spin the Wheel</h1>
       {selectedLabel && <h2>Congratulations {selectedLabel} {emojis[Math.floor(Math.random() * emojis.length)]}</h2>}
