@@ -7,6 +7,7 @@
     "frame": {
       "version": "1",
       "name": "Spin the Wheel",
+      "tagline": "Spin a wheel to randomly select a winner",
       "iconUrl": "https://spin-wheel.anyvoid.xyz/main.png",
       "homeUrl": "https://spin-wheel.anyvoid.xyz",
       "imageUrl": "https://spin-wheel.anyvoid.xyz/main.png",
